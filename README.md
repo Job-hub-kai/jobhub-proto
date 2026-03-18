@@ -1,0 +1,2 @@
+# jobhub-proto
+Protobuf контракты
