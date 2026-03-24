@@ -1,0 +1,195 @@
+syntax = "proto3";
+
+package user.v1;
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/Alksndr9/jobhub-proto/gen/go/user";
+
+service UserService {
+    // Профиль
+  rpc GetProfile(GetProfileRequest) returns (GetProfileResponse);
+  rpc UpdateProfile(UpdateProfileRequest) returns (UpdateProfileResponse);
+  rpc UpdateTags(UpdateTagsRequest) returns (UpdateTagsResponse);
+  rpc GetStats(GetStatsRequest) returns (GetStatsResponse);
+
+    // Избранное
+  rpc GetFavorites(GetFavoritesRequest) returns (GetFavoritesResponse);
+  rpc AddFavorite(AddFavoriteRequest) returns (AddFavoriteResponse);
+  rpc RemoveFavorite(RemoveFavoriteRequest) returns (RemoveFavoriteResponse);
+
+    // Отклики
+  rpc GetResponses(GetResponsesRequest) returns (GetResponsesResponse);
+  rpc CreateResponse(CreateResponseRequest) returns (CreateResponseResponse);
+
+    // Подписки
+  rpc GetSubscriptions(GetSubscriptionsRequest) returns (GetSubscriptionsResponse);
+  rpc CreateSubscription(CreateSubscriptionRequest) returns (CreateSubscriptionResponse);
+  rpc DeleteSubscription(DeleteSubscriptionRequest) returns (DeleteSubscriptionResponse);
+
+    // Резюме
+  rpc UploadResume(UploadResumeRequest) returns (UploadResumeResponse);
+  rpc GetResume(GetResumeRequest) returns (GetResumeResponse);
+  rpc DeleteResume(DeleteResumeRequest) returns (DeleteResumeResponse);
+}
+
+message User {
+  string                    id         = 1;
+  string                    email      = 2;
+  string                    name       = 3;
+  repeated string           tags       = 4;
+  string                    resume_url = 5;
+  google.protobuf.Timestamp created_at = 6;
+}
+
+message GetProfileRequest {
+  string user_id = 1;
+}
+
+message GetProfileResponse {
+  User user = 1;
+}
+
+message UpdateProfileRequest {
+  string user_id = 1;
+  string name    = 2;
+  string email   = 3;
+}
+
+message UpdateProfileResponse {
+  User user = 1;
+}
+
+message UpdateTagsRequest {
+  string          user_id = 1;
+  repeated string tags    = 2;
+}
+
+message UpdateTagsResponse {}
+
+message GetStatsRequest {
+  string user_id = 1;
+}
+
+message GetStatsResponse {
+  int64 favorites_count     = 1;
+  int64 responses_count     = 2;
+  int64 subscriptions_count = 3;
+  int64 views_count         = 4;
+}
+
+message GetFavoritesRequest {
+  string user_id = 1;
+  int32  page    = 2;
+  int32  limit   = 3;
+}
+
+message GetFavoritesResponse {
+  repeated string job_ids = 1;
+  int64           total   = 2;
+}
+
+message AddFavoriteRequest {
+  string user_id = 1;
+  string job_id  = 2;
+}
+
+message AddFavoriteResponse {}
+
+message RemoveFavoriteRequest {
+  string user_id = 1;
+  string job_id  = 2;
+}
+
+message RemoveFavoriteResponse {}
+
+message GetResponsesRequest {
+  string user_id = 1;
+  int32  page    = 2;
+  int32  limit   = 3;
+}
+
+message Response {
+  string                    id         = 1;
+  string                    job_id     = 2;
+  string                    user_id    = 3;
+  string                    status     = 4;
+  google.protobuf.Timestamp created_at = 5;
+}
+
+message GetResponsesResponse {
+  repeated Response responses = 1;
+  int64             total     = 2;
+}
+
+message CreateResponseRequest {
+  string user_id = 1;
+  string job_id  = 2;
+}
+
+message CreateResponseResponse {
+  string id = 1;
+}
+
+message Subscription {
+  string                    id          = 1;
+  string                    user_id     = 2;
+  string                    search      = 3;
+  repeated string           tags        = 4;
+  string                    experience  = 5;
+  int64                     salary_from = 6;
+  int64                     salary_to   = 7;
+  google.protobuf.Timestamp created_at  = 8;
+}
+
+message GetSubscriptionsRequest {
+  string user_id = 1;
+}
+
+message GetSubscriptionsResponse {
+  repeated Subscription subscriptions = 1;
+}
+
+message CreateSubscriptionRequest {
+  string          user_id     = 1;
+  string          search      = 2;
+  repeated string tags        = 3;
+  string          experience  = 4;
+  int64           salary_from = 5;
+  int64           salary_to   = 6;
+}
+
+message CreateSubscriptionResponse {
+  string id = 1;
+}
+
+message DeleteSubscriptionRequest {
+  string user_id         = 1;
+  string subscription_id = 2;
+}
+
+message DeleteSubscriptionResponse {}
+
+message UploadResumeRequest {
+  string user_id  = 1;
+  bytes  data     = 2;
+  string filename = 3;
+}
+
+message UploadResumeResponse {
+  string resume_url = 1;
+}
+
+message GetResumeRequest {
+  string user_id = 1;
+}
+
+message GetResumeResponse {
+  string resume_url = 1;
+}
+
+message DeleteResumeRequest {
+  string user_id = 1;
+}
+
+message DeleteResumeResponse {}

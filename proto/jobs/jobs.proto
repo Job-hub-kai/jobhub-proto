@@ -1,0 +1,80 @@
+syntax = "proto3";
+
+package jobs.v1;
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/Alksndr9/jobhub-proto/gen/go/jobs";
+
+service JobsService {
+  rpc GetJobs(GetJobsRequest) returns (GetJobsResponse);
+  rpc GetJobByID(GetJobByIDRequest) returns (GetJobByIDResponse);
+  rpc CreateJob(CreateJobRequest) returns (CreateJobResponse);
+  rpc IncrementViews(IncrementViewsRequest) returns (IncrementViewsResponse);
+}
+
+message Job {
+  string                    id          = 1;
+  string                    title       = 2;
+  string                    description = 3;
+  string                    company     = 4;
+  string                    source      = 5;
+  string                    source_url  = 6;
+  string                    experience  = 7;
+  int64                     salary_from = 8;
+  int64                     salary_to   = 9;
+  string                    currency    = 10;
+  repeated string           tags        = 11;
+  int64                     views       = 12;
+  google.protobuf.Timestamp created_at  = 13;
+  google.protobuf.Timestamp updated_at  = 14;
+}
+
+message GetJobsRequest {
+  int32           page        = 1;
+  int32           limit       = 2;
+  string          sort        = 3;
+  string          order       = 4;
+  string          search      = 5;
+  string          source      = 6;
+  string          experience  = 7;
+  int64           salary_from = 8;
+  int64           salary_to   = 9;
+  repeated string tags        = 10;
+}
+
+message GetJobsResponse {
+  repeated Job jobs  = 1;
+  int64        total = 2;
+  int32        page  = 3;
+  int32        limit = 4;
+}
+
+message GetJobByIDRequest {
+  string id = 1;
+}
+
+message GetJobByIDResponse {
+  Job job = 1;
+}
+
+message CreateJobRequest {
+  string          title       = 1;
+  string          description = 2;
+  string          company     = 3;
+  string          experience  = 4;
+  int64           salary_from = 5;
+  int64           salary_to   = 6;
+  string          currency    = 7;
+  repeated string tags        = 8;
+}
+
+message CreateJobResponse {
+  string id = 1;
+}
+
+message IncrementViewsRequest {
+  string id = 1;
+}
+
+message IncrementViewsResponse {}
