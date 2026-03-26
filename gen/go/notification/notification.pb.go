@@ -833,7 +833,7 @@ const file_notification_notification_proto_rawDesc = "" +
 	"\rMarkAllAsRead\x12%.notification.v1.MarkAllAsReadRequest\x1a&.notification.v1.MarkAllAsReadResponse\x12m\n" +
 	"\x12DeleteNotification\x12*.notification.v1.DeleteNotificationRequest\x1a+.notification.v1.DeleteNotificationResponse\x12X\n" +
 	"\vGetSettings\x12#.notification.v1.GetSettingsRequest\x1a$.notification.v1.GetSettingsResponse\x12a\n" +
-	"\x0eUpdateSettings\x12&.notification.v1.UpdateSettingsRequest\x1a'.notification.v1.UpdateSettingsResponseB6Z4github.com/Alksndr9/jobhub-proto/gen/go/notificationb\x06proto3"
+	"\x0eUpdateSettings\x12&.notification.v1.UpdateSettingsRequest\x1a'.notification.v1.UpdateSettingsResponseB6Z4github.com/Job-hub-kai/jobhub-proto/gen/go/notificationb\x06proto3"
 
 var (
 	file_notification_notification_proto_rawDescOnce sync.Once

@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package auth.v1;
 
-option go_package = "github.com/Alksndr9/jobhub-proto/gen/go/auth";
+option go_package = "github.com/Job-hub-kai/jobhub-proto/gen/go/auth";
 
 service AuthService {
   rpc Register(RegisterRequest) returns (RegisterResponse);
@@ -10,6 +10,7 @@ service AuthService {
   rpc Logout(LogoutRequest) returns (LogoutResponse);
   rpc RefreshToken(RefreshTokenRequest) returns (RefreshTokenResponse);
   rpc ValidateToken(ValidateTokenRequest) returns (ValidateTokenResponse);
+  rpc GetUser(GetUserRequest) returns (GetUserResponse);
 }
 
 message RegisterRequest {
@@ -54,4 +55,14 @@ message ValidateTokenRequest {
 message ValidateTokenResponse {
   string user_id = 1;
   string email   = 2;
+}
+
+message GetUserRequest {
+  string user_id = 1;
+}
+
+message GetUserResponse {
+  string user_id = 1;
+  string email   = 2;
+  string name    = 3;
 }

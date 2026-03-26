@@ -1,4 +1,4 @@
-module github.com/Alksndr9/jobhub-proto
+module github.com/Job-hub-kai/jobhub-proto
 
 go 1.24.7
 
