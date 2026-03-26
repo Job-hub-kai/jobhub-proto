@@ -28,6 +28,7 @@ message Job {
   int64                     views       = 12;
   google.protobuf.Timestamp created_at  = 13;
   google.protobuf.Timestamp updated_at  = 14;
+  bool                      is_external = 15;
 }
 
 message GetJobsRequest {
