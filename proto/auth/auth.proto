@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package auth.v1;
 
-option go_package = "github.com/Alksndr9/jobhub-proto/gen/go/auth";
+option go_package = "github.com/Job-hub-kai/jobhub-proto/gen/go/auth";
 
 service AuthService {
   rpc Register(RegisterRequest) returns (RegisterResponse);

@@ -1881,7 +1881,7 @@ const file_user_user_proto_rawDesc = "" +
 	"\x12DeleteSubscription\x12\".user.v1.DeleteSubscriptionRequest\x1a#.user.v1.DeleteSubscriptionResponse\x12K\n" +
 	"\fUploadResume\x12\x1c.user.v1.UploadResumeRequest\x1a\x1d.user.v1.UploadResumeResponse\x12B\n" +
 	"\tGetResume\x12\x19.user.v1.GetResumeRequest\x1a\x1a.user.v1.GetResumeResponse\x12K\n" +
-	"\fDeleteResume\x12\x1c.user.v1.DeleteResumeRequest\x1a\x1d.user.v1.DeleteResumeResponseB.Z,github.com/Alksndr9/jobhub-proto/gen/go/userb\x06proto3"
+	"\fDeleteResume\x12\x1c.user.v1.DeleteResumeRequest\x1a\x1d.user.v1.DeleteResumeResponseB.Z,github.com/Job-hub-kai/jobhub-proto/gen/go/userb\x06proto3"
 
 var (
 	file_user_user_proto_rawDescOnce sync.Once

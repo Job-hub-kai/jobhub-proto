@@ -739,7 +739,7 @@ const file_jobs_jobs_proto_rawDesc = "" +
 	"\n" +
 	"GetJobByID\x12\x1a.jobs.v1.GetJobByIDRequest\x1a\x1b.jobs.v1.GetJobByIDResponse\x12B\n" +
 	"\tCreateJob\x12\x19.jobs.v1.CreateJobRequest\x1a\x1a.jobs.v1.CreateJobResponse\x12Q\n" +
-	"\x0eIncrementViews\x12\x1e.jobs.v1.IncrementViewsRequest\x1a\x1f.jobs.v1.IncrementViewsResponseB.Z,github.com/Alksndr9/jobhub-proto/gen/go/jobsb\x06proto3"
+	"\x0eIncrementViews\x12\x1e.jobs.v1.IncrementViewsRequest\x1a\x1f.jobs.v1.IncrementViewsResponseB.Z,github.com/Job-hub-kai/jobhub-proto/gen/go/jobsb\x06proto3"
 
 var (
 	file_jobs_jobs_proto_rawDescOnce sync.Once

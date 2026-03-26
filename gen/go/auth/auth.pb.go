@@ -536,7 +536,7 @@ const file_auth_auth_proto_rawDesc = "" +
 	"\x05Login\x12\x15.auth.v1.LoginRequest\x1a\x16.auth.v1.LoginResponse\x129\n" +
 	"\x06Logout\x12\x16.auth.v1.LogoutRequest\x1a\x17.auth.v1.LogoutResponse\x12K\n" +
 	"\fRefreshToken\x12\x1c.auth.v1.RefreshTokenRequest\x1a\x1d.auth.v1.RefreshTokenResponse\x12N\n" +
-	"\rValidateToken\x12\x1d.auth.v1.ValidateTokenRequest\x1a\x1e.auth.v1.ValidateTokenResponseB.Z,github.com/Alksndr9/jobhub-proto/gen/go/authb\x06proto3"
+	"\rValidateToken\x12\x1d.auth.v1.ValidateTokenRequest\x1a\x1e.auth.v1.ValidateTokenResponseB.Z,github.com/Job-hub-kai/jobhub-proto/gen/go/authb\x06proto3"
 
 var (
 	file_auth_auth_proto_rawDescOnce sync.Once
